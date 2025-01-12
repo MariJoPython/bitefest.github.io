@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churros - Bite Fest</title>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #faf3e0;
+            color: #5b3d2e;
+        }
+
+        header {
+            background-color: #8b5e34;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-style: italic;
+        }
+
+        .item-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .item-container img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .item-container h2 {
+            font-size: 2.4em;
+            margin-top: 20px;
+            color: #8b5e34;
+        }
+
+        .item-container p {
+            font-size: 1.3em;
+            color: #5b3d2e;
+            max-width: 800px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .order-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .order-button {
+            background-color: #25d366; /* WhatsApp color */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .order-button:hover {
+            background-color: #128c7e;
+        }
+
+        .calendar-section {
+            margin-top: 40px;
+        }
+
+        .calendar-section input {
+            padding: 10px;
+            font-size: 1.2em;
+            border: 1px solid #8b5e34;
+            border-radius: 8px;
+        }
+
+        .back-button {
+            background-color: #8b5e34; /* Same color as header */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #5a3e28; /* Darker shade of the header color */
+        }
+
+        footer {
+            background-color: #8b5e34;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bite Fest</h1>
+    </header>
+
+    <div class="item-container">
+        <!-- Item Image -->
+        <img src="images/churros.jpeg" alt="Churros">
+
+        <!-- Item Title -->
+        <h2>Churros</h2>
+
+        <!-- Item Description -->
+        <p>
+            Crispy, sugary churros, served with a side of rich chocolate sauce for dipping.
+
+        </p>
+
+        <!-- WhatsApp Order Button -->
+        <div class="order-section">
+            <a href="https://wa.me/194229726?text=I%20would%20like%20to%20order%20Mini%20Hot%20Dogs." target="_blank" class="order-button">
+                Order via WhatsApp
+            </a>
+        </div>
+
+        <!-- Availability Calendar -->
+        <div class="calendar-section">
+            <h3>Check Availability</h3>
+            <input type="date" id="availability-date" name="availability">
+        </div>
+
+        <!-- Back to Menu Button -->
+        <a href="index.html" class="back-button">Back to Menu</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Bite Fest. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Array of unavailable dates (in 'YYYY-MM-DD' format)
+        const unavailableDates = [
+            '2025-01-15', // Example unavailable date
+            '2025-01-17', // Another unavailable date
+            '2025-01-20', // And so on
+        ];
+
+        const availabilityInput = document.getElementById('availability-date');
+
+        // Disable unavailable dates on the calendar
+        availabilityInput.addEventListener('input', function() {
+            const selectedDate = availabilityInput.value;
+            if (unavailableDates.includes(selectedDate)) {
+                alert('Sorry, this date is unavailable. Please choose another one.');
+                availabilityInput.value = ''; // Reset the input if unavailable date is selected
+            }
+        });
+
+        // Disable unavailable dates on calendar load
+        function disableUnavailableDates() {
+            const input = document.getElementById('availability-date');
+            const datepicker = input.querySelector('input[type="date"]');
+            if (datepicker) {
+                unavailableDates.forEach(date => {
+                    datepicker.setAttribute('min', date); // Block the unavailable dates
+                });
+            }
+        }
+
+        disableUnavailableDates();
+    </script>
+</body>
+</html>
