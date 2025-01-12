@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bite Fest</title>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #faf3e0;
+            color: #5b3d2e;
+        }
+
+        header {
+            background-color: #8b5e34;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-style: italic;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.4em;
+            font-weight: 300;
+        }
+
+        nav {
+            background-color: #a37a4a;
+            color: #ffffff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f0e1c1;
+        }
+
+        .food-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .menu, .services, .contact {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu h2, .services h2, .contact h2 {
+            font-size: 2.4em;
+            color: #8b5e34;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Menu items grid layout */
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Design for each menu item */
+        .menu-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item h3 {
+            font-size: 1.6em;
+            margin: 10px;
+            color: #8b5e34;
+        }
+
+        .menu-item p {
+            font-size: 1.2em;
+            color: #5b3d2e;
+            margin: 0 10px 20px;
+        }
+
+        .menu-item a {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: #8b5e34;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item a:hover {
+            background-color: #a37a4a;
+        }
+
+        footer {
+            background-color: #8b5e34;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Bite Fest</h1>
+        <p>Sabor en Cada Bocado, Diversión en Cada Evento</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h2>Delicious Catering for Every Occasion</h2>
+    </div>
+
+    <!-- Food Image Section -->
+    <img src="images/banner.jpg" alt="A delicious food" class="food-image" />
+
+    <!-- Menu Section with Transitions and Cards -->
+    <section class="menu" id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="images/hot_dogs_with_tomato_sauce_and_mustard.jpeg" alt="Mini Hot Dogs">
+                <h3>Mini Hot Dogs</h3>
+                <p>A savory snack packed with flavor.</p>
+                <a href="mini-hot-dogs.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/of_delicious_mini_burgers_perfect_for_any.jpeg" alt="Mini burgers">
+                <h3>Mini burgers</h3>
+
+                <p>Delicious mini burgers perfect for any occasion.</p>
+                <a href="sliders.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/empanadas_con_fondo_de_personas_comiendo.jpeg" alt="Empanadas">
+                <h3>Empanadas</h3>
+                <p>Golden, crispy pockets filled with savory goodness.</p>
+                <a href="empanadas.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/mini_arepas_venezolanas_rellenas_de_jamon_y.jpeg" alt="Mini Arepas">
+                <h3>Mini Arepas</h3>
+                <p>Stuffed corn pockets that are perfect for any gathering.</p>
+                <a href="mini-arepas.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/cheese_rolls.jpeg" alt="Tequeños">
+                <h3>Tequeños</h3>
+                <p>Crispy cheese-filled breadsticks, a party favorite!</p>
+                <a href="tequenos.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/mini_tacos_de_cerdo_y_pollo.jpeg" alt="Mini Tacos">
+                <h3>Mini Tacos</h3>
+                <p>Small, flavorful tacos with your choice of filling.</p>
+                <a href="mini-tacos.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/mini_donuts.jpeg" alt="Mini Donuts">
+                <h3>Mini Donuts</h3>
+                <p>Sweet, fluffy donuts perfect for dessert.</p>
+                <a href="mini-donuts.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/churros.jpeg" alt="Churros">
+                <h3>Churros</h3>
+                <p>Crispy and sugary, dipped in chocolate sauce.</p>
+                <a href="churros.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/mini_cheesecakes_en_vasos_peque_os_y_claros (1).jpeg" alt="Mini Cheesecakes">
+                <h3>Mini Cheesecakes</h3>
+                <p>Delicious mini cheesecakes with a smooth finish.</p>
+                <a href="mini-cheesecakes.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/brownie_bites.jpeg" alt="Brownie Bites">
+                <h3>Brownie Bites</h3>
+                <p>Decadent chocolate brownie squares in bite-size form.</p>
+                <a href="brownie-bites.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/poutine_canadiense.jpeg" alt="poutine_canadiense">
+                <h3>Poutine</h3>
+                <p>Crispy fries topped with cheese curds and gravy</p>
+                <a href="poutine.html">See More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/of_a_cake_pops.jpeg" alt="Cake Pops">
+                <h3>Cake Pops</h3>
+                <p>Fun-sized cake balls on sticks, covered in chocolate.</p>
+                <a href="cake-pops.html">See More</a>
+            </div>     
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Customized catering for events of all sizes</li>
+            <li>Presentation, delivery, and setup</li>
+            <li>Personalized menus to suit your event</li>
+            <li>On-site staff for serving and assistance</li>
+        </ul>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@bitefest.com</p>
+        <p>Phone: +1-800-555-1234</p>
+        <p>Follow us on social media for updates and special offers!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Bite Fest. All rights reserved.</p>
+    </footer>
+</body>
+</html>
